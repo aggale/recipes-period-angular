@@ -3,22 +3,21 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './modules/home/pages/home/home.component';
-import { AboutComponent } from './modules/about/pages/about/about.component';
-import { BrowseComponent } from './modules/browse/pages/browse/browse.component';
-import { RecipeThumbComponent } from './components/recipe-thumb/recipe-thumb.component';
+import { HomeModule } from './modules/home/home.module';
+import { AboutModule } from './modules/about/about.module';
+import { BrowseModule } from './modules/browse/browse.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    AboutComponent,
-    BrowseComponent,
-    RecipeThumbComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    AboutModule,
+    BrowseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

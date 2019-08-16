@@ -1,2 +1,8 @@
-<h2>{{recipe.recipeName}}</h2>
-<p>{{recipe.description}}</p>
+<div class="card mb-4 box-shadow">
+  <div class="card-body">
+    <h4 class="card-title text-center">{{recipe.recipeName}}</h4>
+    <p class="card-text">{{recipe.description}}
+      <span class="font-italic">(Ingredients: {{ingredientList}})</span>
+    </p>
+  </div>
+</div>

@@ -1,6 +1,17 @@
-<h2>All Recipes</h2>
-<ul>
-  <li *ngFor="let recipe of recipes">
-    <rec-recipe-thumb [recipe] = recipe></rec-recipe-thumb>
-  </li>
-</ul>
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Browse All Recipes</h1>
+    </div>
+    <p class="lead">Want to narrow things down? Try the <a href="/search"> search </a>menu.</p>
+  </section>
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4" *ngFor="let recipe of recipes">
+            <rec-recipe-thumb *ngIf="recipe.show" [recipe] = recipe></rec-recipe-thumb>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

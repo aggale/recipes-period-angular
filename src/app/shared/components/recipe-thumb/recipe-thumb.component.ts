@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recipe } from '../../shared/models/recipe'
+import { Recipe } from '../../models/recipe'
 
 @Component({
   selector: 'rec-recipe-thumb',
@@ -8,10 +8,23 @@ import { Recipe } from '../../shared/models/recipe'
 })
 export class RecipeThumbComponent implements OnInit {
   @Input() recipe: Recipe;
+  ingredientList: string;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.ingredientList = this.recipe.ingredients.map(ing => ing.replace(/[0-9\/ ]+ ((c.?|cup|lb.?|lbs|T.?|t.?|oz) )?/i, ''))
+      .join(', ');
+    // this.ingredientList = this.recipe.ingredients.replace(/\[|\]|\"/g, "")
+    //   .split(',')
+    //   .map(ing =>
+    //     {
+    //       return ing.replace(/[0-9\/ ]+ ((c.?|cup|lb.?|lbs|T.?|t.?|oz) )?/i, '');
+    //     })
+    //   .join(', ');
   }
 
 }
